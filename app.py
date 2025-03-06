@@ -12,6 +12,17 @@ def save_uploaded_file(uploaded_file, save_path):
         f.write(uploaded_file.getbuffer())
     return save_path
 
+# start Arun hide github on streamlit
+
+hide_github = """
+    <style>
+    .stDeployButton {display: none !important;}
+    </style>
+"""
+st.markdown(hide_github, unsafe_allow_html=True)
+# end Arun hide github on streamlit
+
+
 def main():
     st.title("Video to Word and DrawIO Converter")
 
