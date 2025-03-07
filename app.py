@@ -4,7 +4,22 @@ from dotenv import load_dotenv
 import time
 from doc_processing import process_video  # Import the processing function
 
+ # start Arun hide github on streamlit
+hide_github_icon = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+.css-1v3fvcr {visibility: hidden;}
+</style>
+"""
+
+# Inject custom CSS
+st.markdown(hide_github_icon, unsafe_allow_html=True)
+
 load_dotenv()
+
+
 
 def save_uploaded_file(uploaded_file, save_path):
     """Save uploaded file to disk."""
@@ -15,17 +30,6 @@ def save_uploaded_file(uploaded_file, save_path):
 
 def main():
     
-    # start Arun hide github on streamlit
-
-    hide_github = """
-    <style>
-        .stDeployButton {display: none !important;}
-    </style>
-    """
-    st.markdown(hide_github, unsafe_allow_html=True)
-    # end Arun hide github on streamlit
-
-
     st.title("Video to Word and DrawIO Converter")
 
     uploaded_file = st.file_uploader("Upload a video file", type=["mp4", "avi", "mov", "mkv"])
