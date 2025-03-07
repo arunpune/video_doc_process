@@ -65,5 +65,5 @@ def main():
         with open(st.session_state.drawio_file, "rb") as df:
             st.download_button("Download DrawIO File", data=df, file_name=os.path.basename(st.session_state.drawio_file))
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
